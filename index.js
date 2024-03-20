@@ -95,7 +95,7 @@ class CustomCrop extends Component {
                 dy: corner.y,
               },
             ],
-            { useNativeDriver: true }
+            { useNativeDriver: false }
           ),
           onPanResponderRelease: () => {
             corner.flattenOffset();
