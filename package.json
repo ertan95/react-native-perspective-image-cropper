@@ -1,6 +1,6 @@
 {
   "name": "@ertan95/react-native-perspective-image-cropper",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "React native library allowing you to make custom crop and perspective corrections on photos",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,5 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-native": "^0.72.6"
-  }  
+  }
 }
