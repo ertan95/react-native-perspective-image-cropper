@@ -35,6 +35,7 @@ RCT_EXPORT_METHOD(crop:(NSDictionary *)points imageUri:(NSString *)imageUri call
     CIContext *context = [CIContext contextWithOptions:nil];
     CGImageRef cgimage = [context createCGImage:ciImage fromRect:[ciImage extent]];
     UIImage *image = [UIImage imageWithCGImage:cgimage];
+    CGImageRelease(cgimage); // important to avoid memory leaks
     
     NSData *imageToEncode = UIImageJPEGRepresentation(image, 0.8);
     callback(@[[NSNull null], @{@"image": [imageToEncode base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]}]);

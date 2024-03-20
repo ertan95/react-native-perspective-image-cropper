@@ -86,22 +86,25 @@ class CustomCrop extends Component {
 
     createPanResponser(corner) {
         return PanResponder.create({
-            onStartShouldSetPanResponder: () => true,
-            onPanResponderMove: Animated.event([
-                null,
-                {
-                    dx: corner.x,
-                    dy: corner.y,
-                },
-            ]),
-            onPanResponderRelease: () => {
-                corner.flattenOffset();
-                this.updateOverlayString();
-            },
-            onPanResponderGrant: () => {
-                corner.setOffset({ x: corner.x._value, y: corner.y._value });
-                corner.setValue({ x: 0, y: 0 });
-            },
+          onStartShouldSetPanResponder: () => true,
+          onPanResponderMove: Animated.event(
+            [
+              null,
+              {
+                dx: corner.x,
+                dy: corner.y,
+              },
+            ],
+            { useNativeDriver: true }
+          ),
+          onPanResponderRelease: () => {
+            corner.flattenOffset();
+            this.updateOverlayString();
+          },
+          onPanResponderGrant: () => {
+            corner.setOffset({ x: corner.x._value, y: corner.y._value });
+            corner.setValue({ x: 0, y: 0 });
+          },
         });
     }
 

@@ -1,4 +1,5 @@
 # React Native perspective image cropper 📐🖼
+This version introduces a nativeDriver property to fix the "Animated event now requires a second argument for options" warning and optimizes memory leaks by properly releasing images after cropping.
 
 A component that allows you to perform custom image crop and perspective correction !
 
@@ -12,9 +13,9 @@ https://github.com/Michaelvilleneuve/react-native-document-scanner
 
 ## Installation 🚀🚀
 
-`$ npm install react-native-perspective-image-cropper --save`
+`$ npm install @ertan95/react-native-perspective-image-cropper --save`
 
-`$ react-native link react-native-perspective-image-cropper`
+`$ cd ios && pod install && cd ..`
 
 This library uses react-native-svg, you must install it too. See https://github.com/react-native-community/react-native-svg for more infos.
 
