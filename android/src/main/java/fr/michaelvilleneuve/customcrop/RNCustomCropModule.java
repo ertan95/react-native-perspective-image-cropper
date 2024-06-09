@@ -95,7 +95,7 @@ public class RNCustomCropModule extends ReactContextBaseJavaModule {
     Utils.matToBitmap(doc, bitmap);
 
     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-    bitmap.compress(Bitmap.CompressFormat.JPEG, 70, byteArrayOutputStream);
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
     byte[] byteArray = byteArrayOutputStream.toByteArray();
 
     WritableMap map = Arguments.createMap();
